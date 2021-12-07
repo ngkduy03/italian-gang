@@ -27,15 +27,15 @@ public class registerServlet extends HttpServlet {
 			User user = new User();
 
 			if (pass.equals(secondpass)) {
-				user.setEmail(account);
+				user.setAccount(account);
 				user.setPassword(pass);
-				System.out.println(user.getEmail());
-				if (UserDAO.emailExists(user.getEmail())) {
+				System.out.println(user.getAccount());
+				if (UserDAO.accountExists(user.getAccount())) {
 					url = "/index.jsp";
 					message = "email have already exist";
 
 				} else {
-					System.out.println(UserDAO.emailExists(user.getEmail()));
+					System.out.println(UserDAO.accountExists(user.getAccount()));
 					UserDAO.addUser(user);
 					message = "login";
 

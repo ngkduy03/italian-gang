@@ -22,7 +22,7 @@ public class UserDAO {
 		return user;
 	}
 
-	public static boolean emailExists(String email) {
+	public static boolean accountExists(String email) {
 		User u = selectUser(email);
 
 		return u != null;
@@ -61,5 +61,4 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-
 }

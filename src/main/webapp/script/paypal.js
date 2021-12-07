@@ -16,7 +16,7 @@ function initPayPalButton() {
           ],
         });
       },
-      onCancel: function (_) {
+      onCancel: function () {
         window.location.href = "../cart.jsp";
       },
       // Finalize the transaction after payer approval
@@ -32,7 +32,9 @@ function initPayPalButton() {
 
           removeLocalStorage();
 
-          window.location.href = "/";
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 4000);
         });
       },
     })

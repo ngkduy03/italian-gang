@@ -27,7 +27,7 @@ public class loginServlet extends HttpServlet {
 			System.out.println(account);
 			System.out.println(pass);
 
-			if (UserDAO.emailExists(user.getEmail())) {
+			if (UserDAO.accountExists(user.getEmail())) {
 				if (UserDAO.checkLoginUser(account, pass)) {
 					user = UserDAO.selectUser(account);
 
