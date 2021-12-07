@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  app:
+    image: italian-gang
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/italian-gang.war:/usr/local/tomcat/webapps/ROOT.war
