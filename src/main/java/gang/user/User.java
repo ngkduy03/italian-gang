@@ -16,7 +16,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "uid")
 	private int uid;
-	private String account;
+	private String email;
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -30,7 +30,7 @@ public class User implements Serializable {
 			String address) {
 		super();
 		this.uid = uid;
-		this.account = account;
+		this.email = account;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -47,11 +47,11 @@ public class User implements Serializable {
 	}
 
 	public void setAccount(String account) {
-		this.account = account;
+		this.email = account;
 	}
 
 	public String getAccount() {
-		return this.account;
+		return this.email;
 	}
 
 	public void setPassword(String password) {

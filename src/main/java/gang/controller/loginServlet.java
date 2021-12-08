@@ -18,14 +18,13 @@ public class loginServlet extends HttpServlet {
 		if (action == null) {
 			action = "join";
 		}
+
 		if (action.equals("join")) {
 			String account = req.getParameter("account");
 			String pass = req.getParameter("password");
 			User user = new User();
 			user.setAccount(account);
 			user.setPassword(pass);
-			System.out.println(account);
-			System.out.println(pass);
 
 			if (UserDAO.accountExists(user.getAccount())) {
 				if (UserDAO.checkLoginUser(account, pass)) {

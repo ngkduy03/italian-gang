@@ -6,13 +6,15 @@ import org.hibernate.Transaction;
 import gang.data.HibernateUtil;
 
 public class UserDAO {
-	public static User selectUser(String email) {
+	public static User selectUser(String account) {
 		Transaction transaction = null;
 		User user = null;
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			transaction = session.beginTransaction();
-			user = (User) session.createQuery(" FROM User u WHERE u.email = :email")
-					.setParameter("email", email).uniqueResult();
+			user = (User) session.createQuery(" FROM User u WHERE u.email = :account")
+					.setParameter("account", account).uniqueResult();
+
+			System.out.println("hello" + user.getAccount());
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -22,21 +24,21 @@ public class UserDAO {
 		return user;
 	}
 
-	public static boolean accountExists(String email) {
-		User u = selectUser(email);
+	public static boolean accountExists(String account) {
+		User u = selectUser(account);
 
 		return u != null;
 	}
 
-	public static boolean checkLoginUser(String email, String password) // Use to login
+	public static boolean checkLoginUser(String account, String password) // Use to login
 	{
 		Transaction transaction = null;
 		User user = null;
 
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 			transaction = session.beginTransaction();
-			user = (User) session.createQuery(" FROM User u WHERE u.email = :email AND u.password = :password")
-					.setParameter("email", email).setParameter("password", password).uniqueResult();
+			user = (User) session.createQuery(" FROM User u WHERE u.email = :account AND u.password = :password")
+					.setParameter("account", account).setParameter("password", password).uniqueResult();
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
