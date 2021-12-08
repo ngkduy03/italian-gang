@@ -22,12 +22,12 @@ public class loginServlet extends HttpServlet {
 			String account = req.getParameter("account");
 			String pass = req.getParameter("password");
 			User user = new User();
-			user.setEmail(account);
+			user.setAccount(account);
 			user.setPassword(pass);
 			System.out.println(account);
 			System.out.println(pass);
 
-			if (UserDAO.accountExists(user.getEmail())) {
+			if (UserDAO.accountExists(user.getAccount())) {
 				if (UserDAO.checkLoginUser(account, pass)) {
 					user = UserDAO.selectUser(account);
 

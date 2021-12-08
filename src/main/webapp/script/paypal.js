@@ -1,6 +1,7 @@
 function initPayPalButton() {
   const amount = document.getElementById("TotalPrice").innerText;
 
+  // eslint-disable-next-line
   paypal
     .Buttons({
       // Sets up the transaction when a payment button is clicked
@@ -30,7 +31,7 @@ function initPayPalButton() {
             layout.style.display = "none";
           }, 2000);
 
-          removeLocalStorage();
+          removeLocalStorage(); // eslint-disable-line
 
           setTimeout(() => {
             window.location.href = "/";

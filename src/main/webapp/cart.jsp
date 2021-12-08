@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/style/thanks.css" />
     <script src="/script/Cart.js" defer></script>
     <script src="/script/cart1.js" defer></script>
+    <script src="/script/login.js" defer></script>
 	<script src="/script/paypal.js" defer></script>
 	<script src="https://www.paypal.com/sdk/js?client-id=Ac168FfjHNa-SERjcKvfUyowKz5w5_6q5yc9w7CEU-7PnbgqXalljT3oXhE1dulK63sHHoC90ZXC7As8"></script>
 	</head>

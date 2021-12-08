@@ -2,6 +2,7 @@ function IDgen() {
   return new Date().getTime();
 }
 
+// eslint-disable-next-line
 function addToCard(Name, Price, Desc, Img) {
   const orders = JSON.parse(localStorage.getItem("order") ?? "[]");
 
@@ -13,6 +14,7 @@ function addToCard(Name, Price, Desc, Img) {
   localStorage.getItem("order");
 }
 
+// eslint-disable-next-line
 function removeLocalStorage() {
   localStorage.clear();
 }
